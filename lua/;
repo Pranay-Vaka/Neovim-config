@@ -1,0 +1,17 @@
+vim.cmd [[packadd packer.nvim]]
+
+return require("packer").startup(function(use)
+
+	--packer can manage itself
+	use "wbthomason/packer.nvim"
+
+	--coloursceme
+	use "gruvbox-community/gruvbox"
+
+	use {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig"
+	}
+
+end)
