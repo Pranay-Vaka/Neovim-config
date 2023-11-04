@@ -1,8 +1,2 @@
-require("base")
-require("keybindings")
-require("p-lualine")
-require("packer-plugins")
-require("p-mason")
-require("p-lsp")
-require("p-autocomplete")
-require("p-neoscroll")
+require("theprimeagen")
+
