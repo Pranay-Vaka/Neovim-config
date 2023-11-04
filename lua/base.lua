@@ -5,7 +5,8 @@ vim.g.mapleader = " "
 local opt = vim.opt
 
 --colourscehemes
-vim.cmd.colorscheme "slate"
+--vim.cmd.colorscheme "slate"
+vim.cmd.colorscheme "gruvbox"
 --vim.cmd.colorscheme 'melange'
 --vim.cmd [[termguicolors = true]]
 
