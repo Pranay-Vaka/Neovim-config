@@ -1,12 +1,20 @@
 require("theprimeagen.set")
 require("theprimeagen.remap")
-
+require("theprimeagen.lua_line")
 
 local augroup = vim.api.nvim_create_augroup
 local ThePrimeagenGroup = augroup('ThePrimeagen', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
+
+--disables the defaily status bar
+vim.cmd [[
+set noshowmode
+set noruler
+set laststatus=0
+set noshowcmd
+]]
 
 function R(name)
     require("plenary.reload").reload_module(name)
@@ -32,3 +40,5 @@ autocmd({"BufWritePre"}, {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
+
