@@ -38,7 +38,3 @@ vim.opt.updatetime = 50
 vim.cmd[[autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window '" . expand("%:t") . "'")
 autocmd VimLeave * call system("tmux setw automatic-rename")
 ]]
-vim.cmd[[
-set encoding=utf8
-let g:airline_powerline_fonts = 1
-]]
