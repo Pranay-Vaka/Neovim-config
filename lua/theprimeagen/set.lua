@@ -34,11 +34,16 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
---vim.opt.colorcolumn = "80"
+--tmux stuff
 vim.cmd[[autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window '" . expand("%:t") . "'")
 autocmd VimLeave * call system("tmux setw automatic-rename")
 ]]
+
+--this does stuff, don't delete it bruh
 vim.cmd[[
 set encoding=utf8
 let g:airline_powerline_fonts = 1
 ]]
+
+
+

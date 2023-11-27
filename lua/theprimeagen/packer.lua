@@ -24,9 +24,6 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use "rebelot/kanagawa.nvim"
-    use "lunarvim/Onedarker.nvim"
-    use "morhetz/gruvbox"
-    use 'AlexvZyl/nordic.nvim'
     use 'aktersnurra/no-clown-fiesta.nvim'
     use({
         'rose-pine/neovim',
@@ -45,8 +42,8 @@ return require('packer').startup(function(use)
         "folke/trouble.nvim",
         config = function()
             require("trouble").setup {
-                icons = false,
-                -- your configuration comes here
+                icons = true,
+                -- your confation comes here
                 -- or leave it empty to use the default settings
                 -- refer to the configuration section below
             }
