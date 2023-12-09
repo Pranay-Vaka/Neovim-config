@@ -45,5 +45,6 @@ set encoding=utf8
 let g:airline_powerline_fonts = 1
 ]]
 
-
-
+-- vim.cmd [[
+-- let g:vimtex_view_method=‘skim’
+-- ]]
