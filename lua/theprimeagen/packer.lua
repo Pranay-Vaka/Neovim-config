@@ -29,13 +29,32 @@ return require('packer').startup(function(use)
     use "rose-pine/neovim"
     use "Alexis12119/nightly.nvim"
     use "kvrohit/rasmus.nvim"
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme no-clown-fiesta')
-        end
-    })
+    use 'projekt0n/github-nvim-theme'
+    use 'AlexvZyl/nordic.nvim'
+    use 'bluz71/vim-moonfly-colors'
+    use 'Mofiqul/vscode.nvim'
+    use 'ribru17/bamboo.nvim'
+    use 'mikesmithgh/gruvsquirrel.nvim'
+    use {'nyoom-engineering/oxocarbon.nvim'}
+    use 'lunacookies/vim-colors-xcode'
+    use 'davidosomething/vim-colors-meh'
+    use 'navarasu/onedark.nvim'
+    use 'rktjmp/lush.nvim'
+    use { 'metalelf0/jellybeans-nvim' }
+    use {
+        "mcchrish/zenbones.nvim",
+        -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+        -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+        -- In Vim, compat mode is turned on as Lush only works in Neovim.
+        requires = "rktjmp/lush.nvim"
+    }
+    -- use({
+    --     'rose-pine/neovim',
+    --     as = 'rose-pine',
+    --     config = function()
+    --         vim.cmd('colorscheme github-nvim-theme')
+    --     end
+    -- })
     use {
         'numToStr/Comment.nvim',
         config = function()
