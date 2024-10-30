@@ -5,6 +5,7 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
 
     use 'mhartington/formatter.nvim'
+    use 'lervag/vimtex'
     use 'wbthomason/packer.nvim'
     use 'm4xshen/autoclose.nvim'
     use 'kyazdani42/nvim-web-devicons'
@@ -23,8 +24,12 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
+    use 'mfussenegger/nvim-jdtls'
     use "rebelot/kanagawa.nvim"
-    use "morhetz/gruvbox"
+    use "EdenEast/nightfox.nvim"
+    use "kepano/flexoki-neovim"
+    use { 'dasupradyumna/midnight.nvim' }
+    use "ellisonleao/gruvbox.nvim"
     use 'aktersnurra/no-clown-fiesta.nvim'
     use "rose-pine/neovim"
     use "Alexis12119/nightly.nvim"
@@ -40,6 +45,7 @@ return require('packer').startup(function(use)
     use 'davidosomething/vim-colors-meh'
     use 'navarasu/onedark.nvim'
     use 'rktjmp/lush.nvim'
+    use 'ramojus/mellifluous.nvim'
     use { 'metalelf0/jellybeans-nvim' }
     use {
         "mcchrish/zenbones.nvim",
@@ -48,6 +54,8 @@ return require('packer').startup(function(use)
         -- In Vim, compat mode is turned on as Lush only works in Neovim.
         requires = "rktjmp/lush.nvim"
     }
+    use "sainnhe/gruvbox-material"
+    use "savq/melange-nvim"
     -- use({
     --     'rose-pine/neovim',
     --     as = 'rose-pine',
@@ -109,12 +117,13 @@ return require('packer').startup(function(use)
     }
 
     use("folke/zen-mode.nvim")
-    use("github/copilot.vim")
+    use {
+        "github/copilot.vim",
+    }
     use("eandrju/cellular-automaton.nvim")
     use("laytan/cloak.nvim")
-
-
     --line thing
     use "lukas-reineke/indent-blankline.nvim"
+    use("mellow-theme/mellow.nvim")
 end)
 
