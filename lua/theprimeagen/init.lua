@@ -1,5 +1,5 @@
-require("pranay.set")
-require("pranay.remap")
+require("theprimeagen.set")
+require("theprimeagen.remap")
 local augroup = vim.api.nvim_create_augroup
 local myGroup = augroup('myGroup', {})
 require("nvim-tree").setup()
