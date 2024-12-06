@@ -3,7 +3,6 @@
 vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
     -- Packer can manage itself
-
     use 'mhartington/formatter.nvim'
     use 'lervag/vimtex'
     use 'wbthomason/packer.nvim'
@@ -25,44 +24,13 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use 'mfussenegger/nvim-jdtls'
-    use "rebelot/kanagawa.nvim"
-    use "EdenEast/nightfox.nvim"
-    use "kepano/flexoki-neovim"
-    use { 'dasupradyumna/midnight.nvim' }
     use "ellisonleao/gruvbox.nvim"
     use 'aktersnurra/no-clown-fiesta.nvim'
-    use "rose-pine/neovim"
-    use "Alexis12119/nightly.nvim"
     use "kvrohit/rasmus.nvim"
-    use 'projekt0n/github-nvim-theme'
-    use 'AlexvZyl/nordic.nvim'
-    use 'bluz71/vim-moonfly-colors'
     use 'Mofiqul/vscode.nvim'
-    use 'ribru17/bamboo.nvim'
-    use 'mikesmithgh/gruvsquirrel.nvim'
-    use {'nyoom-engineering/oxocarbon.nvim'}
-    use 'lunacookies/vim-colors-xcode'
-    use 'davidosomething/vim-colors-meh'
-    use 'navarasu/onedark.nvim'
-    use 'rktjmp/lush.nvim'
     use 'ramojus/mellifluous.nvim'
     use { 'metalelf0/jellybeans-nvim' }
-    use {
-        "mcchrish/zenbones.nvim",
-        -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-        -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-        -- In Vim, compat mode is turned on as Lush only works in Neovim.
-        requires = "rktjmp/lush.nvim"
-    }
-    use "sainnhe/gruvbox-material"
     use "savq/melange-nvim"
-    -- use({
-    --     'rose-pine/neovim',
-    --     as = 'rose-pine',
-    --     config = function()
-    --         vim.cmd('colorscheme github-nvim-theme')
-    --     end
-    -- })
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -86,13 +54,8 @@ return require('packer').startup(function(use)
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
             ts_update()
         end, }
-    use("nvim-treesitter/playground")
-    use("theprimeagen/harpoon")
-    use("theprimeagen/refactoring.nvim")
     use("mbbill/undotree")
     use("tpope/vim-fugitive")
-    --use("nvim-treesitter/nvim-treesitter-context");
-
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -116,14 +79,11 @@ return require('packer').startup(function(use)
         }
     }
 
-    use("folke/zen-mode.nvim")
     use {
         "github/copilot.vim",
     }
-    use("eandrju/cellular-automaton.nvim")
     use("laytan/cloak.nvim")
     --line thing
     use "lukas-reineke/indent-blankline.nvim"
-    use("mellow-theme/mellow.nvim")
 end)
 

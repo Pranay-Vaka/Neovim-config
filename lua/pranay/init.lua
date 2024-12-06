@@ -60,33 +60,6 @@ require("autoclose").setup({
    },
 })
 
--- local colors = {
---   blue   = '#80a0ff',
---   cyan   = '#79dac8',
---   black  = '#080808',
---   white  = '#c6c6c6',
---   red    = '#ff5189',
---   violet = '#d183e8',
---   grey   = '#303030',
--- }
---
--- local bubbles_theme = {
---   normal = {
---     a = { fg = colors.black, bg = colors.violet },
---     b = { fg = colors.white, bg = colors.grey },
---     c = { fg = colors.black, bg = colors.black },
---   },
---
---   insert = { a = { fg = colors.black, bg = colors.blue } },
---   visual = { a = { fg = colors.black, bg = colors.cyan } },
---   replace = { a = { fg = colors.black, bg = colors.red } },
---
---   inactive = {
---     a = { fg = colors.white, bg = colors.black },
---     b = { fg = colors.white, bg = colors.black },
---     c = { fg = colors.black, bg = colors.black },
---   },
--- }
 
 -- Default options:
 
@@ -115,84 +88,6 @@ require("gruvbox").setup({
   transparent_mode = false,
 })
 
--- Lua
-require('bamboo').setup {
-  -- Main options --
-  -- NOTE: to use the light theme, set `vim.o.background = 'light'`
-  style = 'vulgaris', -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
-  toggle_style_key = nil, -- Keybind to toggle theme style. Leave it nil to disable it, or set it to a string, e.g. "<leader>ts"
-  toggle_style_list = { 'vulgaris', 'multiplex', 'light' }, -- List of styles to toggle between
-  transparent = false, -- Show/hide background
-  dim_inactive = false, -- Dim inactive windows/buffers
-  term_colors = true, -- Change terminal color as per the selected theme style
-  ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
-  cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
-
-  -- Change code style ---
-  -- Options are italic, bold, underline, none
-  -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
-  code_style = {
-    comments = 'italic',
-    conditionals = 'italic',
-    keywords = 'bold',
-    functions = 'none',
-    namespaces = 'italic',
-    parameters = 'italic',
-    strings = 'none',
-    variables = 'none',
-  },
-
-  -- Lualine options --
-  lualine = {
-    transparent = false, -- lualine center bar transparency
-  },
-
-  -- Custom Highlights --
-  colors = {}, -- Override default colors
-  highlights = {}, -- Override highlight groups
-
-  -- Plugins Config --
-  diagnostics = {
-    darker = false, -- darker colors for diagnostic
-    undercurl = true, -- use undercurl instead of underline for diagnostics
-    background = true, -- use background color for virtual text
-  },
-}-- Lua
-
--- Lua
-require('onedark').setup {
-    -- Main options --
-    style = 'darker',-- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-    transparent = false,  -- Show/hide background
-    term_colors = true, -- Change terminal color as per the selected theme style
-    ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
-    cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
-
-    -- toggle theme style ---
-    toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-    toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
-
-    -- Change code style ---
-    -- Options are italic, bold, underline, none
-    -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
-    code_style = {
-        comments = 'italic',
-        keywords = 'bold',
-        functions = 'bold',
-        strings = 'italic',
-        variables = 'none'
-    },
-    -- Custom Highlights --
-    colors = {}, -- Override default colors
-    highlights = {}, -- Override highlight groups
-
-    -- Plugins Config --
-    diagnostics = {
-        darker = true, -- darker colors for diagnostic
-        undercurl = true,   -- use undercurl instead of underline for diagnostics
-        background = true,    -- use background color for virtual text
-    },
-}
 
 require('lualine').setup {
   options = {
@@ -235,86 +130,10 @@ require('lualine').setup {
   extensions = {}
 }
 
--- Default options:
-require('kanagawa').setup({
-    compile = false,             -- enable compiling the colorscheme
-    undercurl = true,            -- enable undercurls
-    commentStyle = { italic = true },
-    functionStyle = {},
-    keywordStyle = { italic = true},
-    statementStyle = { bold = true },
-    typeStyle = {},
-    transparent = false,         -- do not set background color
-    dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
-    terminalColors = true,       -- define vim.g.terminal_color_{0,17}
-    colors = {                   -- add/modify theme and palette colors
-        palette = {},
-        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-    },
-    overrides = function(colors) -- add/modify highlights
-        return {}
-    end,
-    theme = "dragon",              -- Load "wave" theme when 'background' option is not set
-    background = {               -- map the value of 'background' option to a theme
-        dark = "dragon",           -- try "dragon" !
-        light = "lotus"
-    },
-})
 
 -- Utilities for creating configurations
 local util = require "formatter.util"
 
-
-require('mellifluous').setup {
-    dim_inactive = false,
-    color_set = 'mellifluous',
-    styles = { -- see :h attr-list for options. set {} for NONE, { option = true } for option
-        comments = { italic = true },
-        conditionals = {bold = true},
-        folds = {},
-        loops = {bold = true},
-        functions = {},
-        keywords = {bold = true},
-        strings = {italic = true},
-        variables = {},
-        numbers = {},
-        booleans = {bold = true},
-        properties = {bold = true},
-        types = {bold = true},
-        operators = {},
-    },
-    transparent_background = {
-        enabled = true,
-        floating_windows = true,
-        telescope = true,
-        file_tree = true,
-        cursor_line = true,
-        status_line = false,
-    },
-    flat_background = {
-        line_numbers = true,
-        floating_windows = true,
-        file_tree = true,
-        cursor_line_number = true,
-    },
-    plugins = {
-        cmp = true,
-        gitsigns = true,
-        indent_blankline = true,
-        nvim_tree = {
-            enabled = true,
-            show_root = false,
-        },
-        neo_tree = {
-            enabled = true,
-        },
-        telescope = {
-            enabled = true,
-            nvchad_like = true,
-        },
-        startify = true,
-    },
-}
 
 -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
 require("formatter").setup {
@@ -364,26 +183,25 @@ require("formatter").setup {
   }
 }
 
--- require("ibl").setup {
---     whitespace = {
---         remove_blankline_trail = true,
---     },
---     scope = { enabled = false },
--- }
-
-
 -- copilot
 vim.g.copilot_enabled = false
 
-require('nvim-treesitter.configs').setup {
-  ensure_installed = { "lua", "python", "javascript" },
-  highlight = {
-    enable = true,
-  },
-}
 
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup {
+    ensure_installed = {
+        "ts_ls", -- For TypeScript and JavaScript
+        "pyright",                    -- Example for Python
+        "lua_ls",                     -- Example for Lua
+    }
+}
+
+require("lspconfig").ts_ls.setup {
+    on_attach = function(client, bufnr)
+        -- Custom keybindings and logic for LSP here
+    end,
+    capabilities = vim.lsp.protocol.make_client_capabilities(),
+}
 
 require('lsp-zero')
 require('lspconfig').lua_ls.setup({})
