@@ -1,6 +1,24 @@
 require("pranay.set")
 require("pranay.remap")
 local augroup = vim.api.nvim_create_augroup
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {"text", "markdown", "plain"},
+    callback = function()
+        vim.opt_local.wrap = true
+        vim.opt_local.textwidth = 100
+        vim.opt_local.colorcolumn = "100"
+    end,
+})
+
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "README*",
+    callback = function()
+        vim.opt_local.wrap = true
+        vim.opt_local.colorcolumn = "100"
+    end,
+})
+
+
 local myGroup = augroup('myGroup', {})
 require("nvim-tree").setup()
 
@@ -51,7 +69,7 @@ require("autoclose").setup({
       ["`"] = { escape = true, close = true, pair = "``" },
    },
    options = {
-      disabled_filetypes = { "text" },
+      disabled_filetypes = { "text", "markdown" },
       disable_when_touch = false,
       touch_regex = "[%w(%[{]",
       pair_spaces = false,
@@ -210,12 +228,12 @@ require("no-clown-fiesta").setup({
   styles = {
     -- You can set any of the style values specified for `:h nvim_set_hl`
     comments = {italic = true},
-    keywords = {bold = true},
-    functions = {bold = true},
+    keywords = {bold = false},
+    functions = {bold = false},
     variables = {},
     strings = {italic = true},
     type = { bold = true },
-    lsp = { underline = true }
+    lsp = { underline = false}
   },
 })
 vim.cmd.colorscheme("no-clown-fiesta")
