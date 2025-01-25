@@ -21,7 +21,32 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
 
 local myGroup = augroup('myGroup', {})
 require("nvim-tree").setup()
+require('nvim-treesitter.configs').setup {
+    -- List of parsers to install or "all"
+    ensure_installed = { "lua", "python", "javascript", "html", "css", "c", "cpp" }, -- Add languages you use
 
+    -- Enable highlighting
+    highlight = {
+        enable = true,                -- Enable Treesitter-based syntax highlighting
+        additional_vim_regex_highlighting = false, -- Use Vim regex highlighting alongside Treesitter
+    },
+
+    -- Enable incremental selection
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "gnn",
+            node_incremental = "grn",
+            scope_incremental = "grc",
+            node_decremental = "grm",
+        },
+    },
+
+    -- Enable Treesitter-based indentation
+    indent = {
+        enable = true
+    }
+}
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
 
